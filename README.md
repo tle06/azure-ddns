@@ -29,6 +29,14 @@ poetry run python azure_ddns/cli.py
 
 ``` cmd
 poetry build
+pip install dist/azure_ddns-0.0.1-py3-none-any.whl --force-reinstall
+```
+## Install the package build
+
+If needed replace the version number
+
+``` cmd
+pip install dist/azure_ddns-*-py3-none-any.whl --force-reinstall
 ```
 
 ## Publish package
