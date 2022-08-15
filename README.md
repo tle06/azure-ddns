@@ -1,5 +1,12 @@
+[![Packages](https://img.shields.io/badge/packages-latest-blue.svg)](https://pypi.org/project/azure-ddns/)
+![python-version](https://img.shields.io/pypi/pyversions/azure-ddns)
+![license](https://img.shields.io/github/license/tle06/azure-ddns)
+
+
+
 # Azure-ddns
 Azure Dynamic DNS from [FrodeHus](https://www.frodehus.dev/azure-dyndns/) ([repo](https://github.com/FrodeHus/azure-dyndns)) work.
+
 The package is available [here](https://pypi.org/project/azure-ddns/) to run directly from CLI
 
 
