@@ -1,16 +1,25 @@
 [tool.poetry]
-name = "azure-ddns"
+name = "azure_ddns"
 version = "0.0.1"
 description = ""
 authors = ["tle06 <tle@tlnk.fr>"]
+license = "MIT"
+readme = "README.md"
+homepage="https://github.com/tle06/azure-ddns"
+repository = "https://github.com/tle06/azure-ddns"
+include = ["./LICENSE"]
 
 [tool.poetry.dependencies]
-python = ">=3.8"
+python = "^3.10"
 azure-identity = "^1.10.0"
 azure-mgmt-dns = "^8.0.0"
 
 [tool.poetry.dev-dependencies]
+pytest = "^5.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+azure-ddns = "azure_ddns.cli:main"

@@ -79,7 +79,9 @@ def get_external_ip():
     response = client.request("get", "/")
     return response.data.decode("utf-8")
 
-
-if __name__ == "__main__":
+def main():
     ip = get_external_ip()
     update_dns(ip)
+
+if __name__ == "__main__":
+    main()
