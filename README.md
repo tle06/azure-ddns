@@ -47,3 +47,18 @@ export PYPI_USERNAME=__token__
 export PYPI_PASSWORD=pypi_token_to_be_replace_by_yours
 poetry publish --build --username $PYPI_USERNAME --password $PYPI_PASSWORD
 ```
+
+## Install package from Pypi.org
+
+```cmd
+pip install azure-ddns
+```
+
+## Cron task on your linux
+
+If you need a cron generator check [here](https://crontab.guru/)
+
+```cmd
+crontab -e
+*/30 * * * * azure-ddns -config /home/user/azure-dyndns.json > dyndns.txt
+```
