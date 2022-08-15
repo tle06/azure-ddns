@@ -14,7 +14,8 @@ The package is available [here](https://pypi.org/project/azure-ddns/) to run dir
 Create virtual environment:
 
 ``` cmd
-cd azure_ddns
+git clone https://github.com/tle06/azure-ddns.git
+cd azure-ddns/azure_ddns
 poetry shell
 poetry install
 ```
