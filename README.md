@@ -1,13 +1,13 @@
 # Azure-ddns
-Azure Dynamic DNS from [FrodeHus](https://github.com/FrodeHus/azure-dyndns) work.
+Azure Dynamic DNS from [FrodeHus](https://www.frodehus.dev/azure-dyndns/) ([repo](https://github.com/FrodeHus/azure-dyndns)) work.
 The package is available [here](https://pypi.org/project/azure-ddns/) to run directly from CLI
 
 
 # Requirement
 
-python 3.10
-poetry
-Azure application id and secret with contribute permission on the DNS zone targeted
+- python 3.10
+- poetry
+- Azure application id and secret with contribute permission on the DNS zone targeted
 
 ## Setup local
 
