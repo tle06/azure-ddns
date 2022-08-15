@@ -1,6 +1,6 @@
 # Azure-ddns
 Azure Dynamic DNS from [FrodeHus](https://github.com/FrodeHus/azure-dyndns) work.
-The package is available here to run directly from CLI
+The package is available [here](https://pypi.org/project/azure-ddns/) to run directly from CLI
 
 
 # Requirement
