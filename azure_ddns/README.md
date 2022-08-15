@@ -2,7 +2,7 @@
 
 ## Installation
 
-pip install azure_ddns
+pip install azure-ddns
 
 ## Run
 
