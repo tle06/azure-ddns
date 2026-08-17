@@ -1,0 +1,12 @@
+services:
+  azure-ddns:
+    build: .
+    image: ghcr.io/tle06/azure-ddns:latest
+    container_name: azure-ddns
+    restart: unless-stopped
+    env_file:
+      - .env
+    command:
+      - --resource-group=${AZURE_RESOURCE_GROUP}
+      - --zone=${AZURE_ZONE_NAME}
+      - --record=${AZURE_RECORD_NAME}
