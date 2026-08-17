@@ -31,3 +31,22 @@ The json should be formated like this:
     "tenantId": ""
 }
 ```
+
+CLI flags take priority over the config file, which takes priority over
+environment variables (`AZURE_SUBSCRIPTION_ID`, `AZURE_TENANT_ID`,
+`AZURE_CLIENT_ID`, `AZURE_CLIENT_SECRET`). If tenant/client id/secret aren't
+all resolved, `DefaultAzureCredential` is used instead (managed identity,
+Azure CLI login, etc.).
+
+## Run continuously
+
+By default the tool checks the IP once and exits. Pass `--interval-seconds`
+(or set `AZURE_DDNS_INTERVAL_SECONDS`) to run forever, checking on that
+interval and only calling the Azure DNS API when the public IP changed:
+
+```cmd
+azure-ddns --config path/to/your/config.json --interval-seconds 300
+```
+
+Use `--log-level` (or `LOG_LEVEL`) to control verbosity (`DEBUG`, `INFO`,
+`WARNING`, `ERROR`; defaults to `INFO`).
