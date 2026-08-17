@@ -1,0 +1,36 @@
+name: Container CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "azure_ddns/**"
+      - ".github/workflows/container-ci.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "azure_ddns/**"
+      - ".github/workflows/container-ci.yml"
+
+jobs:
+  build:
+    name: Build container image
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: docker/setup-buildx-action@v4
+      - uses: docker/build-push-action@v7
+        with:
+          context: azure_ddns
+          push: false
+          load: true
+          tags: azure-ddns:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      - name: Smoke test image
+        run: |
+          docker run --rm azure-ddns:ci --help
+          if docker run --rm azure-ddns:ci; then
+            echo "Expected non-zero exit code when required config is missing" >&2
+            exit 1
+          fi
