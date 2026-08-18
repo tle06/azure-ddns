@@ -157,3 +157,18 @@ crontab -e
 Publishing to PyPI and pushing the container image to GHCR are both handled
 by GitHub Actions and triggered by publishing a GitHub Release (see
 `.github/workflows/publish-package.yml` and `.github/workflows/publish-container.yml`).
+
+To cut a release:
+
+1. Bump `version` in `azure_ddns/pyproject.toml` and `__version__` in
+   `azure_ddns/azure_ddns/__init__.py` to the same value, e.g. `0.2.0`.
+2. Commit, then create a GitHub Release with tag `v0.2.0` (the `v` prefix is
+   required for correct semver tagging of the container image).
+3. The `Publish package` and `Publish container` workflows run automatically.
+
+**First-time setup:** publishing to PyPI uses
+[trusted publishing](https://docs.pypi.org/trusted-publishers/) (OIDC, no
+stored token). Before the first release, register a trusted publisher on PyPI
+for this project with owner `tle06`, repository `azure-ddns`, workflow
+`publish-package.yml`, and environment `pypi` -- and make sure a matching
+`pypi` environment exists under the repo's Settings > Environments.

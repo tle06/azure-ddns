@@ -101,6 +101,25 @@ uv build
 - Releases (not plain tag pushes) trigger both publish workflows — cutting a
   GitHub Release is the actual release mechanism for this repo
 
+## Releasing
+
+- **Tag convention:** git tags/releases must be `vX.Y.Z` (e.g. `v0.2.0`), matching
+  the `version` in `azure_ddns/pyproject.toml` and `__version__` in
+  `azure_ddns/azure_ddns/__init__.py`. Bump both files first, then cut the tag/release.
+  A bare tag like `0.0.1` (no `v`, or not matching the package version) will still
+  build, but `docker/metadata-action`'s `type=semver` tagging in
+  `publish-container.yml` expects a `v`-prefixed tag to produce clean version tags.
+- **One-time PyPI setup required before the first release:** `publish-package.yml`
+  uses PyPI trusted publishing (OIDC), which requires a trusted publisher to be
+  registered on PyPI (https://pypi.org/manage/project/azure-ddns/settings/publishing/,
+  or pre-register via https://pypi.org/manage/account/publishing/ if the project
+  doesn't exist on PyPI yet) with exactly: owner `tle06`, repository `azure-ddns`,
+  workflow `publish-package.yml`, environment `pypi`. The GitHub repo also needs a
+  matching `pypi` environment (Settings → Environments) since the job declares
+  `environment: pypi` — without it the OIDC token's `environment` claim won't be
+  present and won't match the PyPI configuration. Missing/mismatched config fails
+  with `invalid-publisher` at publish time, not before.
+
 ## Package Details
 
 - CLI entrypoint registered in `pyproject.toml` as `azure-ddns`
