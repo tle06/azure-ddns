@@ -161,8 +161,8 @@ by GitHub Actions and triggered by publishing a GitHub Release (see
 To cut a release:
 
 1. Bump `version` in `azure_ddns/pyproject.toml` and `__version__` in
-   `azure_ddns/azure_ddns/__init__.py` to the same value, e.g. `0.2.0`.
-2. Commit, then create a GitHub Release with tag `v0.2.0` (the `v` prefix is
+   `azure_ddns/azure_ddns/__init__.py` to the same value, e.g. `0.0.2`.
+2. Commit, then create a GitHub Release with tag `v0.0.2` (the `v` prefix is
    required for correct semver tagging of the container image).
 3. The `Publish package` and `Publish container` workflows run automatically.
 

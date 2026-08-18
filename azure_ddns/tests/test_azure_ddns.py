@@ -8,7 +8,7 @@ from azure_ddns.cli import build_config, parse_args
 
 
 def test_version():
-    assert __version__ == "0.2.0"
+    assert __version__ == "0.0.2"
 
 
 def _args(**overrides) -> argparse.Namespace:

@@ -103,7 +103,7 @@ uv build
 
 ## Releasing
 
-- **Tag convention:** git tags/releases must be `vX.Y.Z` (e.g. `v0.2.0`), matching
+- **Tag convention:** git tags/releases must be `vX.Y.Z` (e.g. `v0.0.2`), matching
   the `version` in `azure_ddns/pyproject.toml` and `__version__` in
   `azure_ddns/azure_ddns/__init__.py`. Bump both files first, then cut the tag/release.
   A bare tag like `0.0.1` (no `v`, or not matching the package version) will still
