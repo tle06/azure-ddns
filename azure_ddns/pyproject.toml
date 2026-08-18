@@ -1,6 +1,6 @@
 [project]
 name = "azure_ddns"
-version = "0.0.3"
+version = "0.0.4"
 description = "Dynamic DNS updates for Azure DNS zones based on current public IP"
 authors = [{ name = "tle06", email = "tle@tlnk.fr" }]
 license = "MIT"
